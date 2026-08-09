@@ -32,7 +32,12 @@ jobs:
 
       # Step 4: Start Server (background) and wait for health
       - name: Start server
-        run: npm start &
+        run: |
+           npm start &
+           for i in {1..15}; do
+           curl -sSf http://localhost:10000/health && break
+           sleep 1
+           done
 
        # Step 5: Install Newman
       - name: Install Newman
