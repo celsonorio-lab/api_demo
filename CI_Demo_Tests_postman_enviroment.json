@@ -1,0 +1,16 @@
+{
+	"id": "78e5a4a7-c4b3-4442-9c32-fc477e23e978",
+	"name": "CI-Demo-Env",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:10000",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"color": null,
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2026-08-08T23:54:39.796Z",
+	"_postman_exported_using": "Postman/12.22.9"
+}
