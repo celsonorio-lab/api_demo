@@ -38,4 +38,12 @@ jobs:
       - name: Install Newman
         run: npm install -g newman
 
+       # Step 6: Run Postman tests with Newman
+      - name: Run tests with Newman
+        run: newman run CI_Demo_Tests_postman_collection.json -e CI_Demo_Tests_postman_enviroment.json
+
+
+
+         
+
         
