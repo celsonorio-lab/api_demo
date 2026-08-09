@@ -1,0 +1,35 @@
+name: CI - Run API tests
+
+# 1. Trigger the pipeline on specific events
+on:
+  push:
+    branches: [ main ]
+
+#  pull_request:
+#    branches: [ main ]
+
+# 2. Define the tasks (jobs) to run
+jobs:
+  test:
+    # Specify the virtual environment machine
+    runs-on: ubuntu-latest
+
+    # Sequence of steps executed in this job
+    steps:
+      # Step 1: Clone your repository code onto the runner
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up your language runtime (Example: Node.js)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Step 3: Install application dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Step 4: Run automated tests
+      - name: Run Tests
+        run: npm test
