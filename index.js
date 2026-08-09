@@ -10,7 +10,7 @@ app.post('/items', (req,res)=>{
     const name = req.body.name || 'unnamed';
     const item = {id: items.length + 1, name};
     items.push(item);
-    res.status(201).json(item);
+    res.status(404).json(item);
 });
 
 app.get('/items', (req,res)=> res.json(items));
