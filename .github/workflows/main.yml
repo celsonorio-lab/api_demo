@@ -30,6 +30,12 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # Step 4: Run automated tests
-      - name: Run Tests
-        run: npm test
+      # Step 4: Start Server (background) and wait for health
+      - name: Start server
+        run: npm start &
+
+       # Step 5: Install Newman
+      - name: Install Newman
+        run: npm install -g newman
+
+        
